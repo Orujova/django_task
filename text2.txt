@@ -1,0 +1,16 @@
+>>> Brand.objects.filter(name__startswith='a')
+<QuerySet [<Brand: adventure>, <Brand: Al>]>
+>>> Brand.objects.filter(name__endswith='s')
+<QuerySet [<Brand: Mars>]>
+>>> Brand.objects.filter(name__contains='ar')
+<QuerySet [<Brand: Mars>, <Brand: pull_Bear>]>
+>>> Store.objects.filter(name__exact='adventure')
+<QuerySet []>
+>>> Store.objects.filter(name__exact='Rahat')
+<QuerySet [<Store: Rahat>]>
+>>> Store.objects.order_by('name')
+<QuerySet [<Store: Bravo>, <Store: Nərmin>, <Store: Rahat>]>
+>>> Product.objects.order_by('price')
+<QuerySet [<Product: saqqiz>, <Product: Konfet>, <Product: lokum>, <Product: Rafeollu>]>
+>>> Product.objects.order_by('name','brand')
+<QuerySet [<Product: Konfet>, <Product: Rafeollu>, <Product: lokum>, <Product: saqqiz>]>
